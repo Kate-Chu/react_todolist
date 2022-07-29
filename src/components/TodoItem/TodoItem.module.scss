@@ -1,0 +1,42 @@
+
+@keyframes show {
+  from{
+    opacity:0;
+    transform: translateY(-50px);
+  }
+  to{
+    opacity:1;
+    transform: none;
+  }
+}
+
+.todoItem {
+  cursor: pointer;
+  position: relative;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  transition: background-color .3s;
+  animation: show .3s ease-in-out;
+  &:hover{
+    background-color: #e5e5e5;
+  }
+  &:before{
+    vertical-align: top;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    content: '';
+    display: inline-block;
+    background-image: url('../../img/checkbox.png');
+  }
+  
+  &[data-active="true"]{
+    text-decoration: line-through;
+    color: #888;
+    background-color: #f6f6f6;
+     &:before {
+      background-position: left 24px;
+    } 
+  }
+}
