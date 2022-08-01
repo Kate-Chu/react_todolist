@@ -54,9 +54,9 @@ const TodoList = () => {
     });
   }, []);
 
-  const atFilterChange = (type: string) => {
+  const atFilterChange = useCallback((type: string) => {
     setFilterType(type);
-  };
+  }, []);
 
   const filtersList = list.filter((todo: TodoType) => {
     if (filterType === 'completed') {
